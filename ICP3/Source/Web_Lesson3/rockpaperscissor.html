@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <style>
+        .button:hover {
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.50), 0 1px 1px rgba(0, 0, 0, 0.24);
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+<body  style=" background-repeat: no-repeat;height:100%;background-size:cover;background-image: url(rpsnew.jpg)">
+
+<h1 style="text-align: center; color: orangered; font-size: 80px;"> ROCK  PAPER  SCISSORS </h1>
+<div>
+    <h2 style="text-align: center">Choose your option</h2>
+
+
+    <button type="button" class="button" style=" border-radius: 12px; margin-left: 16%;background-color: lightseagreen;border: none;color: white;padding: 15px 90px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;" value="Start Game" onclick="StartGame()">ROCK</button>
+    <button type="button" class="button" style="border-radius: 12px;margin-left: 10%;background-color: red;border: none;color: white;padding: 15px 90px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;" value="Start Game" onclick="StartGame2()">PAPER</button>
+    <button type="button" class="button" style="border-radius: 12px;margin-left: 13%;background-color: yellowgreen;border: none;color: white;padding: 15px 70px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;" value="Start Game" onclick="StartGame3()">SCISSORS</button>
+    </center>
+</div>
+<script>
+    function getComputerChoice() {
+        switch(Math.floor(Math.random()*3)) {
+            case 0:
+                return 'rock';
+                break;
+            case 1:
+                return 'scissors';
+                break;
+            case 2:
+                return 'paper';
+                break;
+        };
+    }
+    function determineWinner(userOption,computerChoice) {
+        if (userOption === computerChoice) {
+            return 'It\'s a tie!';
+        } else if (userOption === 'rock') {
+            if (computerChoice === 'paper') {
+                return 'Computer wins the Game!';
+            } else {
+                return 'You won the Game!';
+            }
+
+        } else if (userOption === 'paper'){
+            if (computerChoice === 'scissors') {
+                return 'Computer wins the Game!';
+            }else {
+                return 'You won the Game!';
+            }
+        } else if (userOption === 'scissors') {
+            if (computerChoice === 'rock') {
+                return 'Computer wins the Game!';
+            } else {
+                return 'You won the Game!';
+            }
+        }
+    }
+
+
+    function StartGame() {
+
+        let userOption = "rock";
+        let computerChoice = getComputerChoice();
+        console.log("Your choice "+" " + userOption);
+        console.log("Computer choice "+ computerChoice);
+        window.alert("Computer choice "+ computerChoice);
+        window.alert(determineWinner(userOption,computerChoice));
+    };
+    function StartGame2() {
+
+        let userOption = "paper";
+        let computerChoice = getComputerChoice();
+        console.log("Your choice "+" " + userOption);
+        console.log("Computer choice "+ computerChoice);
+        window.alert("Computer choice "+ computerChoice);
+        window.alert(determineWinner(userOption,computerChoice));
+    };
+    function StartGame3() {
+        let userOption = "scissors";
+        let computerChoice = getComputerChoice();
+        console.log("Your choice "+" " + userOption);
+        console.log("Computer choice "+ computerChoice);
+        window.alert("Computer choice "+ computerChoice);
+        window.alert(determineWinner(userOption,computerChoice));
+    };
+</script>
+</body>
+</html>
