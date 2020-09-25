@@ -1,0 +1,118 @@
+<main class="container">
+    <div class="card">
+        <div class="card__body">
+
+            <h2 class="card__title">
+                EVENT NAME
+            </h2>
+  
+            <div class="countdown__section">
+                <div id="days" class="value">{{this.days}}</div>
+                <div class="countdown__label">DAYS</div>
+            </div>
+
+            <div class="countdown__section">
+                <div id="hours" class="value">{{this.hours}}</div>
+                <div class="countdown__label">HOURS</div>
+            </div>
+
+            <div class="countdown__section">
+                <div id="minutes" class="value">{{this.minutes}}</div>
+                <div class="countdown__label">MINUTES</div>
+            </div>
+
+            <div class="countdown__section">
+                <div id="seconds" class="value">{{this.seconds}}</div>
+                <div class="countdown__label">SECONDS</div>
+            </div>
+             
+            <h2 class="card__title">
+               {{this.datanew.date}}   {{this.displaymonth}}   {{this.datanew.year}}
+            </h2>
+            <input type = "submit" class = "forsubmit" value = "ChangeEvent " (click)="change=true">
+        </div>
+
+        <div class="card__body" [hidden]="!change" >
+
+            <form [formGroup] = "formdata" (ngSubmit) = "onClickSubmit(formdata.value)" >
+                <h2 class="card__title">
+                    CHANGE EVENT
+                </h2>
+    
+                <div class="countdowninput__section">
+                    <div id="date" class="value">
+                        <input type = "text" name = "date"  formControlName="date">
+                    </div>
+                    <div class="countdown__label">DATE</div>
+                </div>
+
+                <div class="countdowninput__section">
+                    <div id="month" class="value">
+                        <input type = "text" name = "month"  formControlName="month">
+                    </div>
+                    <div class="countdown__label">MONTH</div>
+                </div>
+
+
+                <div class="countdowninput__section">
+                    <div id="year" class="value">
+                        <input type = "text" name = "year"  formControlName="year">
+                    </div>
+                    <div class="countdown__label">YEAR</div>
+                </div>
+                
+                <div class="countdowninput__section">
+                    <div id="hours" class="value">
+                        <input type = "text" name = "hours"  formControlName="hours">
+                    </div>
+                    <div class="countdown__label">HOURS</div>
+                </div>
+                
+
+                <div class="countdowninput__section">
+                    <div id="min" class="value">
+                        <input type = "text" name = "min"  formControlName="min">
+                    </div>
+                    <div class="countdown__label">MINUTES</div>
+                </div>
+
+                <div class="countdowninput__section">
+                    <div id="sec" class="value">
+                        <input type = "text" name = "sec"  formControlName="sec">
+                    </div>
+                    <div class="countdown__label">SECONDS</div>
+                </div>
+                <input type = "submit" class = "forsubmit" value = "  Submit ">
+            </form> 
+        </div>
+        
+    </div>
+
+
+
+   
+
+      
+  </main>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
