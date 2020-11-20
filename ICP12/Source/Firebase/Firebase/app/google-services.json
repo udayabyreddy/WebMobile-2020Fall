@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "105743532143",
+    "firebase_url": "https://webmobiledevelopment-5bf44.firebaseio.com",
+    "project_id": "webmobiledevelopment-5bf44",
+    "storage_bucket": "webmobiledevelopment-5bf44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:105743532143:android:e3afc4d15a524e27d08d9a",
+        "android_client_info": {
+          "package_name": "com.vijaya.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "105743532143-568qbrp6cnu935asjletc9n3mo8np4bt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcbssBd9gbEk_G1G58Cbr2XBK3QPtitmI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "105743532143-568qbrp6cnu935asjletc9n3mo8np4bt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
