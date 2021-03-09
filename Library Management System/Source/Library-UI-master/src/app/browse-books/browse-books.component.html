@@ -1,0 +1,93 @@
+<app-loader [isLoading]="sharedState.isLoading | async"></app-loader>
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <form [formGroup]="searchForm" novalidate>
+        <mat-toolbar class="search-container">
+          <div class="row w-100 card-conatiner">
+            <div class="col-md-4 card-item">
+              <mat-form-field class="category">
+                <mat-select formControlName="category">
+                  <mat-option value="title">By Title</mat-option>
+                  <mat-option value="author">By Author</mat-option>
+                  <mat-option value="category">By Category</mat-option>
+                  <mat-option value="isbn">By ISBN</mat-option>
+                </mat-select>
+                <mat-label>Select category</mat-label>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4 card-item">
+              <mat-form-field appearance="outline" class="category">
+                <mat-label>Search books</mat-label>
+                <input
+                  matInput
+                  placeholder="Rich dad Poor Dad"
+                  formControlName="searchValue"
+                />
+                <mat-icon matSuffix>search</mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4 card-item search-btn">
+              <button
+                class="btn-width"
+                mat-raised-button
+                color="primary"
+                (click)="searchBooks()"
+              >
+                Search
+              </button>
+              <button
+                class="btn-width ml-3"
+                mat-raised-button
+                color="accent"
+                (click)="resetBooks()"
+              >
+                Reset
+              </button>
+            </div>
+          </div>
+        </mat-toolbar>
+      </form>
+    </div>
+  </div>
+  <div class="mt-3 mb-3">
+    <div class="row card-conatiner">
+      <div class="col-md-4 card-item" *ngFor="let book of booksData">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="icon-class">
+              <mat-icon>menu_book</mat-icon>
+            </div>
+            <mat-card-title class="card-props">{{
+              book.booktitle
+            }}</mat-card-title>
+            <mat-card-subtitle class="card-author-props">{{
+              book.author
+            }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="d-flex">
+              <span><b>Category:</b></span>
+              <span class="category-props">{{ book.category }}</span>
+            </div>
+            <div class="desc-props"><b> Description: </b>{{ book.desc }}</div>
+            <div><b>Stock:</b> {{ book.stock }}</div>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="accent" (click)="openDialog(book)">
+              Details
+            </button>
+            <button
+              mat-raised-button
+              color="accent"
+              (click)="issueBook(book)"
+              [disabled]="disbleButtons || !(book.stock > 0)"
+            >
+              Issue book
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

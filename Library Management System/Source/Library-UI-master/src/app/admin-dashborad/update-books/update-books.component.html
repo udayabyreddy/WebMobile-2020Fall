@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>Update Book Details</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="updateBookForm" novalidate>
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center">
+        <mat-form-field class="text-box">
+          <mat-label>Book title</mat-label>
+          <input formControlName="booktitle" matInput />
+        </mat-form-field>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <mat-form-field class="text-box">
+          <mat-label>Author</mat-label>
+          <input formControlName="author" matInput />
+        </mat-form-field>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <mat-form-field class="text-box">
+          <mat-label>Category</mat-label>
+          <input formControlName="category" matInput/>
+        </mat-form-field>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <mat-form-field class="text-box">
+          <mat-label>Description</mat-label>
+          <textarea formControlName="desc" matInput></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button
+    [disabled]="!updateBookForm.valid"
+    mat-raised-button
+    class="btn-width"
+    color="accent"
+    (click)="updateBook()"
+  >
+    Update Book
+  </button>
+  <button *ngIf="false" mat-raised-button color="warn" (click)="resetForm()">Reset</button>
+  <button mat-raised-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

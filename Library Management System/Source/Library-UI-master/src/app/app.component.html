@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <div class="d-flex justify-content-between w-100">
+    <div (click)="redirectToHome()" class="cursor-heading">
+      Library Management System
+    </div>
+    <div class="w-20 d-flex align-items-baseline">
+      <div class="welcome-user" *ngIf="sharedState.userName | async">
+        Welcome, {{ sharedState.userName | async }}
+      </div>
+      <div *ngIf="sharedState.userName | async" class="ml-2">
+        <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon class="dropdown dropdown-icon"
+            >keyboard_arrow_down</mat-icon
+          >
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="redirectToDashBoard()">Profile</button>
+          <button mat-menu-item (click)="logOut()">Logout</button>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>
+<router-outlet></router-outlet>

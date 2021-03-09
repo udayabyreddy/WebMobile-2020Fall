@@ -1,0 +1,63 @@
+<div class="container mt-3">
+  <div class="d-flex flex-column align-items-center">
+    <h1>Welcome to library management system</h1>
+    <mat-card class="w-50">
+      <div class="d-flex flex-column align-items-center">
+        <div>
+          <button
+            mat-raised-button
+            class="btn-width"
+            color="primary"
+            [disabled]="disbleButtons"
+            (click)="navigateTo(routes.adminLoginRoute)"
+          >
+            Admin login 
+          </button>
+        </div>
+        <div class="mt-2">
+          <button
+            mat-raised-button
+            class="btn-width"
+            [disabled]="disbleButtons"
+            color="primary"
+            (click)="navigateTo(routes.userLoginRoute)"
+          >
+            User Login
+          </button>
+        </div>
+        <div class="mt-2">
+          <button
+            mat-raised-button
+            class="btn-width"
+            color="primary"
+            [disabled]="disbleButtons"
+            (click)="navigateTo(routes.signUpRoute)"
+          >
+            User sign-up
+          </button>
+        </div>
+        <div class="mt-2">
+          <button
+            mat-raised-button
+            class="btn-width"
+            color="primary"
+            (click)="navigateTo(routes.browseBooksRoute)"
+          >
+            Browse books
+          </button>
+        </div>
+        <div class="mt-2">
+          <button
+            mat-raised-button
+            *ngIf="isAdminUser"
+            class="btn-width"
+            color="primary"
+            (click)="navigateTo(routes.adminDashBoard)"
+          >
+            Admin Dashboard
+          </button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

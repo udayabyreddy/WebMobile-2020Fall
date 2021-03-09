@@ -1,0 +1,10 @@
+{
+  "app": {
+    "port": 3000,
+    "dbURL": "mongodb://localhost:27017/LibrarySystem"
+  },
+  "defaultAdmin": {
+      "username":"libadmin",
+      "password": "password"
+  }
+}

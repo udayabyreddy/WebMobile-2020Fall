@@ -1,0 +1,75 @@
+<div class="container mt-2">
+  <h2>Configure Admins</h2>
+  <div class="row">
+    <div class="col-md-8">
+      <mat-form-field>
+        <mat-label>Search Admin</mat-label>
+        <input
+          matInput
+          (keyup)="applyFilter($event)"
+          placeholder="Ex. David"
+          #input
+        />
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <button mat-raised-button color="primary" (click)="backToDashBoard()">Back to Admin Dashboard</button>
+    </div>
+  </div>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
+        <td mat-cell *matCellDef="let row">{{ row.firstname }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="userName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Username</th>
+        <td mat-cell *matCellDef="let row">{{ row.username }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+        <td mat-cell *matCellDef="let row">{{ row.email }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-cell *matCellDef="let row">
+          <button
+            mat-mini-fab
+            color="accent"
+            (click)="updateAdmin(row)"
+            [disabled]="row?.isDefault"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            class="ml-2"
+            mat-mini-fab
+            color="warn"
+            (click)="deleteAdmin(row)"
+            [disabled]="row?.isDefault"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">
+          No data matching the filter "{{ input.value }}"
+        </td>
+      </tr>
+    </table>
+
+    <mat-paginator
+      class="w-100"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+    ></mat-paginator>
+  </div>
+</div>

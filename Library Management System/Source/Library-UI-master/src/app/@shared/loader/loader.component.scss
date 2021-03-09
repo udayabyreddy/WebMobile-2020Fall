@@ -1,0 +1,26 @@
+.mat-progress-spinner {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.message {
+  margin-left: 0.5em;
+}
+
+.spin {
+  position: fixed;
+  z-index: 999999;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100vw;
+  background: gray;
+  opacity: 0.5;
+  padding: 0;
+  margin-top: -65px;
+}
+
+.spin-position {
+  margin-left: 40%;
+  margin-top: 20%;
+}

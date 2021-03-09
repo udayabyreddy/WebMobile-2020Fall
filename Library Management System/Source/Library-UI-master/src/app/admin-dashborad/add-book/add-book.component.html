@@ -1,0 +1,64 @@
+<h2 mat-dialog-title>Add Books</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="d-flex flex-column align-items-center">
+    <form [formGroup]="addBookForm" novalidate (ngSubmit)="addBook()">
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+          <mat-form-field class="text-box">
+            <mat-label>Book Title</mat-label>
+            <input formControlName="booktitle" matInput />
+          </mat-form-field>
+        </div>
+        <div class="col-md-12 d-flex justify-content-center">
+          <mat-form-field class="text-box">
+            <mat-label>Author</mat-label>
+            <input formControlName="author" matInput />
+          </mat-form-field>
+        </div>
+        <div class="col-md-12 d-flex justify-content-center">
+          <mat-form-field class="text-box">
+            <mat-label>Category</mat-label>
+            <input
+              formControlName="category"
+              placeholder="love, action..."
+              matInput
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-12 d-flex justify-content-center" *ngIf="false">
+          <mat-form-field class="text-box">
+            <mat-label>Stock</mat-label>
+            <input type="number" formControlName="stock" matInput />
+          </mat-form-field>
+        </div>
+        <div class="col-md-12 d-flex justify-content-center">
+          <mat-form-field class="text-box">
+            <mat-label>ISBN</mat-label>
+            <input type="number" formControlName="ISBN" matInput />
+          </mat-form-field>
+        </div>
+        <div class="col-md-12 d-flex justify-content-center">
+          <mat-form-field class="text-box">
+            <mat-label>Description</mat-label>
+            <textarea formControlName="desc" matInput></textarea>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-12 d-flex justify-content-around">
+          <button
+            [disabled]="!addBookForm.valid"
+            mat-raised-button
+            class="btn-width"
+            color="primary"
+          >
+           Add Book
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="warn" (click)="resetForm()">Reset</button>
+  <button mat-raised-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

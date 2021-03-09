@@ -1,0 +1,54 @@
+.example-card {
+  // width: 300px;
+  height: 300px;
+}
+.card-conatiner {
+  margin-top: -30px;
+}
+.card-item {
+  margin-top: 30px;
+}
+.icon-class {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-container {
+  height: auto;
+  min-height: 64px;
+}
+
+.category {
+  height: 55px;
+  font-size: 14px;
+}
+
+.search-btn {
+  display: flex;
+  align-items: center;
+}
+.btn-width {
+  min-width: 100px;
+}
+
+.card-props, .card-author-props, .category-props {
+  max-height: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+.desc-props {
+  min-height: 70px;
+  max-height: 134px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 6% 2% 2% 0;
+}

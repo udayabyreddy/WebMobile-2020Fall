@@ -1,0 +1,42 @@
+<div class="container mt-2">
+  <h1>All Renewables/Returnables</h1>
+  <div>
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="booktittle">
+        <mat-header-cell *matHeaderCellDef>Title </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.booktitle }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="issuedate">
+        <mat-header-cell *matHeaderCellDef> Issue Date </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.issuedDate | date: "medium" }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="returndate">
+        <mat-header-cell *matHeaderCellDef> Return Date </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.returnDate | date: "medium" }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-raised-button color="primary" (click)="renew(element)">Renew</button>
+          <button mat-raised-button class="ml-2" color="accent" (click)="return(element)">Return</button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+  </div>
+</div>

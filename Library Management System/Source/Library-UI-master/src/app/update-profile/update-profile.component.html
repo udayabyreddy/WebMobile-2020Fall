@@ -1,0 +1,63 @@
+<h2 mat-dialog-title>Update Profile</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="updateProfileForm" novalidate>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="d-flex align-items-center justify-content-center">
+          <h1>User Sign up</h1>
+        </div>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <mat-form-field class="text-box">
+          <mat-label>First name</mat-label>
+          <input formControlName="firstName" matInput />
+        </mat-form-field>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <mat-form-field class="text-box">
+          <mat-label>Last name</mat-label>
+          <input formControlName="lastName" matInput />
+        </mat-form-field>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <mat-form-field class="text-box">
+          <mat-label>Username</mat-label>
+          <input formControlName="userName" matInput />
+        </mat-form-field>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <mat-form-field class="text-box">
+          <mat-label>Password</mat-label>
+          <input formControlName="password" type="password" matInput />
+        </mat-form-field>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <mat-form-field class="text-box">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput />
+        </mat-form-field>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <mat-form-field class="text-box">
+          <mat-select required formControlName="gender">
+            <mat-option>-- Select Gender --</mat-option>
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+            <mat-option value="others">Others</mat-option>
+          </mat-select>
+          <mat-label>Gender</mat-label>
+        </mat-form-field>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <mat-form-field class="text-box">
+          <mat-label>Address</mat-label>
+          <textarea formControlName="address" matInput></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="false">Cancel</button>
+  <button mat-button cdkFocusInitial (click)="updateData()">Update</button>
+</mat-dialog-actions>
